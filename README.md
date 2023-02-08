@@ -1,5 +1,5 @@
 # Universe Splitter
-Budget version of the real Universe Splitter.
+Universe Splitter on a budget
 
 Unfortunatley, the Universe Splitter app is paid.
 However, you may have this edition for free...

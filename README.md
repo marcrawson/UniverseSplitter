@@ -9,6 +9,11 @@ Do you ever find yourself with decision fatigue after a hard day of work? Maybe 
 https://apps.apple.com/us/app/universe-splitter/id329233299
 
 ### Background
-I had a lot of fun making this, it's my first time using Python's "time" library. Algorithms are often optimized to take as little time as possible, however, in this case I found it beneficial (and more realistic) to add time delays between print statements to build suspence and to mimic the official Universe Splitter application.
+I had a lot of fun making this, it's my first time using Python's `time` library. Algorithms are often optimized to take as little time as possible, however, in this case I found it more realistic to add time delays between print statements to build suspence and to mimic the official Universe Splitter application.
 
-### Enjoy!
+### Running the program:
+1. Download `Python3`  
+2. Fork UniverseSplitter repo  
+3. Navigate to UniverseSplitter directory  
+4. Run `Python3 universe_splitter.py`  
+5. Follow terminal prompts and enjoy!

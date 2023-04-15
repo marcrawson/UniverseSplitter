@@ -1,65 +1,70 @@
 import random
 import time
 
-def getInput():
+def get_inputs():
     inputs = []
-    input_a = input("First option : ")
-    input_b = input("Second option: ")
+    input_a = input("In one universe, I will now: ")
+    input_b = input("In the other universe, I will now: ")
     inputs.append(input_a)
     inputs.append(input_b)
     return inputs
 
-def chooseResult(inputs):
-    random_index = random.randint(0,1)
-    choice = inputs[random_index]
-    return choice
+def get_idx():
+    return random.randint(0,1)
 
-def universeSplitterAnimation():
-    print()
+def animation():
+    time_delay = 0.8
+    line_length = 20
+    print("\n" + "-"*line_length + "\n")
     print("Input:         ", end = "")
-    time.sleep(1)
+    time.sleep(time_delay)
     print("Valid")
     print("Internet:      ", end = "")
-    time.sleep(1)
+    time.sleep(time_delay)
     print("Connected")
     print("Geneva:        ", end = "")
-    time.sleep(1)
+    time.sleep(time_delay)
     print("Online")
     print("Device:        ", end = "")
-    time.sleep(1)
+    time.sleep(time_delay)
     print("Ready")
     print("Photon:        ", end = "")
-    time.sleep(1)
+    time.sleep(time_delay)
     print("Emitted")
-    print()
-    print("-"*20)
-    print()
-    time.sleep(1)    
+    print("\n" + "-"*line_length + "\n") 
 
-def printDecision(decision):
-    len_decision = len(decision)
-    print("Decision: ")
-    print("!"*(len_decision+10))
-    print("!" + " "*(len_decision+8) + "!")
-    print(f"!    {decision}    !")
-    print("!" + " "*(len_decision+8) + "!")
-    print("!"*(len_decision+10))
-    print()    
+def universe(idx):
+    if (idx == 0):
+        a_or_b = "A"
+    else:
+        a_or_b = "B"
+    universe = "You are in universe " + a_or_b
+    len_decision = len(universe)
 
-def doIt():
-    time.sleep(4)
-    print("... now go do it!")
+    print("YOUR UNIVERSE HAS JUST SPLIT!" + "\n")
+    time.sleep(0.75)
+    print("*"*(len_decision+10))
+    print("*" + " "*(len_decision+8) + "*")
+    print(f"*    {universe}    *")
+    print("*" + " "*(len_decision+8) + "*")
+    print("*"*(len_decision+10) + "\n")
+
+def result(inputs, idx):
+    if (idx == 0):
+        not_idx = 1
+    else:
+        not_idx = 0
+    time.sleep(0.75)
+    print("You are in the universe in which you should " + inputs[idx] + ".")
+    print("(And right now, in the other universe, the other you is being told to " + inputs[not_idx] + ".)\n")
+
 
 def main():
-    inputs = getInput()
-    
-    universeSplitterAnimation()
-    
-    decision = chooseResult(inputs)
-    
-    printDecision(decision)
-    
-    doIt()
+    inputs = get_inputs()
+    animation()
+    idx = get_idx()
+    universe(idx)
+    result(inputs, idx)
 
 
 if (__name__ == "__main__"):
